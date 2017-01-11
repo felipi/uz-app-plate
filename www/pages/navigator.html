@@ -1,0 +1,13 @@
+<ons-navigator ohNav class="navigator" animation="slide" var="pageNavigator" page="pages/login.html"></ons-navigator>
+<ons-toolbar class="toolbar" oh-toolbar>
+  <div class="left">
+    <ons-toolbar-button class="menu-button" onclick="slidingMenu.toggleMenu()">
+      <ons-icon icon="ion-android-menu" style=" color: white; font-size: 34px; width: 1em;"></ons-icon>
+    </ons-toolbar-button>           
+    <ons-button class="backbutton" style="visibility: hidden; border: none;" modifier="light" ng-click="pageNavigator.popPage()" style="border: none;">
+        <ons-icon class="back-button" icon="ion-chevron-left" style="color: white;"></ons-icon>
+    </ons-button>
+  </div>
+  <div class="center">
+  </div>
+</ons-toolbar>
