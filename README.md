@@ -8,6 +8,7 @@ This is just a premade project to quick up bootstrapping new apps.
 npm  
 grunt  
 bundler  
+phoengap
 
 ##Bootstrapping
 
