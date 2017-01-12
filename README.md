@@ -14,8 +14,10 @@ phoengap
 
 npm install  
 bower install  
-grunt wiredep  
-compass compile  
-phonegap serve  
+grunt  
+
+##Cool Tasks
+grunt serve  
+grunt compile
 
 ##I think that's it :)
