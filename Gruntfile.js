@@ -9,8 +9,24 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     watch: {
-        files: ['www/*.html', 'www/bower_components/*', 'www/sass/*'],
-        tasks: ['wiredep', 'compass']
+        sass: {
+            files: ['www/sass/*.scss', 'www/components/**/*.scss', 'www/pages/**/*.scss'],
+            tasks: ['compass']
+        },
+        newFiles: {
+            files: ['www/pages/**/*', 'www/components/**/*'],
+            tasks: ['injector'],
+            options: {
+                event: ['added', 'deleted']
+            }
+        },
+        bower: {
+            files: ['www/bower_components/*'],
+            tasks: ['wiredep'],
+            options: {
+                event: ['added', 'deleted']
+            }
+        }
     },
     compass: {
             dist: {
