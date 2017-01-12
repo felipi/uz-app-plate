@@ -6,8 +6,17 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-injector');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
   grunt.initConfig({
+    connect: {
+        server: {
+            options: {
+                port: 3030,
+                base: "www"
+            }
+        }
+    },
     watch: {
         sass: {
             files: ['www/sass/*.scss', 'www/components/**/*.scss', 'www/pages/**/*.scss'],
@@ -88,6 +97,6 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('default', ['wiredep']);
-  grunt.registerTask('changes', ['watch']);
+  grunt.registerTask('default', ['wiredep', 'injector', 'compass', 'connect', 'watch']);
+  grunt.registerTask('serve', ['connect', 'watch']);
 };
