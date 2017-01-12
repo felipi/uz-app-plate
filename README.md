@@ -12,12 +12,13 @@ phoengap
 
 ##Bootstrapping
 
+bundle install  
 npm install  
 bower install  
 grunt  
 
 ##Cool Tasks
 grunt serve  
-grunt compile
+grunt compile  
 
 ##I think that's it :)
