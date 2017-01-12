@@ -98,5 +98,6 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', ['wiredep', 'injector', 'compass', 'connect', 'watch']);
+  grunt.registerTask('compile', ['wiredep', 'injector', 'compass'])
   grunt.registerTask('serve', ['connect', 'watch']);
 };
