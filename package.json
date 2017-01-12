@@ -20,11 +20,14 @@
   "homepage": "https://github.com/phonegap/phonegap-app-hello-world",
   "dependencies": {},
   "devDependencies": {
+    "@types/onsenui": "0.0.28",
     "grunt": "~0.4.0",
     "grunt-contrib-compass": "^1.1.1",
     "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-injector": "^1.1.0",
-    "grunt-wiredep": "^3.0.1"
+    "grunt-ts": "^6.0.0-beta.10",
+    "grunt-wiredep": "^3.0.1",
+    "typescript": "^2.1.4"
   }
 }

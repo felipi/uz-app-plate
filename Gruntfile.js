@@ -7,6 +7,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-injector');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-ts');
 
   grunt.initConfig({
     connect: {
@@ -35,6 +36,16 @@ module.exports = function(grunt) {
             options: {
                 event: ['added', 'deleted']
             }
+        },
+        typescript: {
+            files: ['www/*.ts'],
+            tasks: ['ts']
+        }
+    },
+    ts: {
+        default: {
+            src: ['www/pages/**/*.ts', 'www/*.ts', 'www/components/**/*.ts', 'www/js/*.ts'],
+            tsconfig: false
         }
     },
     compass: {
@@ -97,7 +108,7 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('default', ['wiredep', 'injector', 'compass', 'connect', 'watch']);
-  grunt.registerTask('compile', ['wiredep', 'injector', 'compass'])
+  grunt.registerTask('default', ['wiredep', 'injector', 'compass', 'connect', 'ts', 'watch']);
+  grunt.registerTask('compile', ['wiredep', 'injector', 'compass', 'ts'])
   grunt.registerTask('serve', ['connect', 'watch']);
 };
