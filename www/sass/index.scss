@@ -1,2 +1,9 @@
 //bower:scss
+@import "../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 //endbower
+
+//<!-- injector:scss -->
+@import "components/menu/_menu.scss";
+/*
+<!-- endinjector -->
+*/

@@ -8,3 +8,4 @@ http_images_dir= '/img'
 javascripts_dir = 'www/js'
 
 relative_assets = true
+add_import_path "www"
