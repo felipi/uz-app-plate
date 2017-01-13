@@ -20,6 +20,7 @@
   "homepage": "https://github.com/phonegap/phonegap-app-hello-world",
   "dependencies": {},
   "devDependencies": {
+    "@types/angular": "^1.6.0",
     "@types/onsenui": "0.0.28",
     "grunt": "~0.4.0",
     "grunt-contrib-compass": "^1.1.1",

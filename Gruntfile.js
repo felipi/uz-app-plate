@@ -38,14 +38,14 @@ module.exports = function(grunt) {
             }
         },
         typescript: {
-            files: ['www/*.ts'],
+            files: ['www/pages/**/*.ts', 'www/*.ts', 'www/components/**/*.ts', 'www/js/*.ts'],
             tasks: ['ts']
         }
     },
     ts: {
         default: {
             src: ['www/pages/**/*.ts', 'www/*.ts', 'www/components/**/*.ts', 'www/js/*.ts'],
-            tsconfig: false
+            tsconfig: true
         }
     },
     compass: {

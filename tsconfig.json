@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
-    "outDir": "www/js",
-    "outFile": "www/js/built.js",
     "rootDir": "www",
     "target": "es5",
     "module": "commonjs",
@@ -18,7 +16,7 @@
   },
   "compileOnSave": true,
   "exclude": [
-    "node_modules/*",
+    "node_modules/**/*",
     "**/*-aot.ts"
   ]
 }
