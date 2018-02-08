@@ -1,22 +1,13 @@
-var MenuController = (function () {
-    function MenuController($scope, $rootScope, $localStorage) {
-        this.$scope = $scope;
-        this.$rootScope = $rootScope;
-        this.$localStorage = $localStorage;
-        $scope.setPage = this.setPage;
-        $rootScope.exitApp = this.exitApp;
-    }
-    MenuController.prototype.setPage = function (page, animation) {
+function MenuController($scope, $rootScope, $localStorage) {
+    $scope.setPage = function (page, animation) {
         if (animation == undefined)
             animation = "lift";
-        this.$rootScope.pageNavigator.pushPage(page, { animation: animation });
-        this.$scope.slidingMenu.closeMenu();
+        $rootScope.pageNavigator.pushPage(page, { animation: animation });
+        $rootScope.slidingMenu.close();
     };
-    MenuController.prototype.exitApp = function () {
-        this.$rootScope.pageNavigator.resetToPage("pages/login/login.html", { animation: "lift" });
-        this.$localStorage.$reset();
-        this.$scope.slidingMenu.closeMenu();
+    $rootScope.exitApp = function () {
+        $rootScope.pageNavigator.resetToPage("pages/login/login.html", { animation: "lift" });
+        $localStorage.$reset();
+        $rootScope.slidingMenu.close();
     };
-    return MenuController;
-}());
-//# sourceMappingURL=menu.js.map
+}

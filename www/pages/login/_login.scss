@@ -1,0 +1,68 @@
+.page.page-login {
+
+    .center-logo {
+        max-width: 25%;
+        display: block;
+        margin: 20px auto;
+    }
+
+    .input-field {
+        position: relative;
+        margin: 18px auto;
+        width: 50%;
+        ons-icon { 
+            position: absolute;
+            top: 18px;
+            left: -6px;
+            font-size: 12pt;
+        }
+        input {
+            display: block;
+            padding: 14px 20px;
+            background-color: transparent;
+            border: none;
+            color: white;
+            border-bottom: 1px solid white;
+            width: 100%;
+            font-size: 12pt;
+        }
+    }
+    form {
+        text-align: center;
+    }
+    
+    a {
+        color: white;
+        text-decoration: underline;
+    }
+
+    button {
+        margin: 7px auto;
+        width: 96%;
+        height: 50px;
+    }
+
+    button.login {
+        color: #FFF;
+        text-transform: uppercase;
+        background-color: $colorHighlight;
+        font-size: 16pt;
+    }
+
+    button.signup {
+        color: white;
+        background-color: $colorAlternative;;
+        font-size: 16pt;
+    }   
+
+    button.facebook {
+        color: white;
+        background-color: #3E5191;
+        font-size: 16pt;
+
+        background-image: url(../img/button_fb.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 0 0;
+    }
+}

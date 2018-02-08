@@ -2,16 +2,23 @@ var API_URL = "";
 var METH_URL = "";
 var iTimeout = 600;
 document.addEventListener("deviceready", onDeviceReady, false);
-var AppController = (function () {
-    function AppController($scope, $localStorage) {
-        this.$scope = $scope;
-        this.$localStorage = $localStorage;
-        this.$scope.$ctrl = this;
-        AppController.instance = this;
+
+function AppController($scope, $rootScope, $timeout, $localStorage) {
+    $scope.$ctrl = this;
+    $rootScope.gotoPage = function(page, animation, reset, data) {
+        if(!animation) animation = "slide";
+        if(!reset)
+            $rootScope.pageNavigator.pushPage("pages/"+page+"/"+page+".html", {animation: animation, data: data});
+        else
+            $rootScope.pageNavigator.resetToPage("pages/"+page+"/"+page+".html", {animation: animation, data: data});
+
     }
-    AppController.$inject = ['$scope', '$localStorage'];
-    return AppController;
-}());
+    
+    $timeout( function(){
+    $rootScope.gotoPage("login", "lift-md", true);
+    });
+}
+
 var uzzyeApp = angular.module('uzzyeApp', ['onsen', 'ngToast', 'ngStorage', 'ui.bootstrap'])
     .config(["ngToastProvider", function (ngToast) {
         ngToast.configure({
@@ -24,12 +31,20 @@ var uzzyeApp = angular.module('uzzyeApp', ['onsen', 'ngToast', 'ngStorage', 'ui.
     }])
     .run(["$localStorage", function ($localStorage) {
         console.log("RUN");
+        if(cordova.plugins && cordova.plugins.permissions)
+            cordova.plugins.permissions.requestPermission(cordova.plugins.permissions.ACCESS_COARSE_LOCATION, (st) => {}, (er) => {});
     }]);
+
 function onDeviceReady() {
     console.log("Ready please");
     window.setTimeout(function () {
         uzzyeApp.controller('appController', AppController);
         uzzyeApp.controller('menuController', MenuController);
+        uzzyeApp.controller('loginController', LoginController);
+
+        uzzyeApp.service("loginService", LoginService);
+
+        uzzyeApp.directive('commonToolbar', CommonToolbar);
         ons.ready(function () {
             ons.disableAutoStyling();
             ons.platform.select('ios');
@@ -40,4 +55,3 @@ function onDeviceReady() {
         console.log("bootstrapped");
     }, 500);
 }
-//# sourceMappingURL=app.js.map

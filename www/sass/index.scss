@@ -2,8 +2,31 @@
 @import "../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 //endbower
 
+@import "compass";
+@import "compass/css3/font-face";
+ 
+$colorMain: #bfbfbf;
+$colorHighlight: #2ECC57;
+$colorAlternative: #30B1E8;
 //<!-- injector:scss -->
+@import "pages/login/_login.scss";
 @import "components/menu/_menu.scss";
 /*
 <!-- endinjector -->
 */
+
+.page[status-bar-fill] > .page__content {
+    top: 0px;
+    padding-top: 69px;
+}
+
+.toolbar + .page__background + .page__content {
+    margin-top: -1px;
+    top: 69px !important;
+}
+
+
+.page .page__background {
+    background-color: $colorMain;
+}
+

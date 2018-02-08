@@ -1,2 +1,21 @@
-<ons-page class="page page-login" ng-controller="appController">
-</ons-page>
+<ons-page class="page page-login" ng-controller="loginController">
+    <img src="img/logo_inicial.png" class="center-logo" />
+
+    <form class="login-form">
+        <div class="input-field">
+            <input type="text" placeholder="Usuário" ng-model="username" class="login-user" />
+            <ons-icon  icon="fa-envelope-o" style="color: white;"></ons-icon>
+        </div>
+        <div class="input-field">
+            <input type="password" placeholder="Senha" ng-model="password" class="login-password" />
+            <ons-icon  icon="fa-lock" style="color: white;"></ons-icon>
+        </div>
+        <button class="button--large--cta login" ng-click="attemptLogin(username, password)" ng-disabled="!username || !password || loading">
+            <span ng-if="!loading">Login</span>
+            <ons-icon icon="ion-load-a" ng-if="loading" spin></ons-icon>
+        </button>
+        <button class="button--large--cta signup" ng-click="signUp()">Novo por aqui? Cadastre-se</button>
+        <button class="button--large--cta facebook" ng-click="facebookLogin()">Conecte via Facebook</button>
+
+        <a href="#" ng-click="forgotPassword()">Esqueceu sua senha?</a>
+</ons-pag'e>

@@ -8788,6 +8788,75 @@ button.close {
     display: none !important;
   }
 }
+/* line 3, ../pages/login/_login.scss */
+.page.page-login .center-logo {
+  max-width: 25%;
+  display: block;
+  margin: 20px auto;
+}
+/* line 9, ../pages/login/_login.scss */
+.page.page-login .input-field {
+  position: relative;
+  margin: 18px auto;
+  width: 50%;
+}
+/* line 13, ../pages/login/_login.scss */
+.page.page-login .input-field ons-icon {
+  position: absolute;
+  top: 18px;
+  left: -6px;
+  font-size: 12pt;
+}
+/* line 19, ../pages/login/_login.scss */
+.page.page-login .input-field input {
+  display: block;
+  padding: 14px 20px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  border-bottom: 1px solid white;
+  width: 100%;
+  font-size: 12pt;
+}
+/* line 30, ../pages/login/_login.scss */
+.page.page-login form {
+  text-align: center;
+}
+/* line 34, ../pages/login/_login.scss */
+.page.page-login a {
+  color: white;
+  text-decoration: underline;
+}
+/* line 39, ../pages/login/_login.scss */
+.page.page-login button {
+  margin: 7px auto;
+  width: 96%;
+  height: 50px;
+}
+/* line 45, ../pages/login/_login.scss */
+.page.page-login button.login {
+  color: #FFF;
+  text-transform: uppercase;
+  background-color: #2ECC57;
+  font-size: 16pt;
+}
+/* line 52, ../pages/login/_login.scss */
+.page.page-login button.signup {
+  color: white;
+  background-color: #30B1E8;
+  font-size: 16pt;
+}
+/* line 58, ../pages/login/_login.scss */
+.page.page-login button.facebook {
+  color: white;
+  background-color: #3E5191;
+  font-size: 16pt;
+  background-image: url(../img/button_fb.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 0 0;
+}
+
 /* line 1, ../components/menu/_menu.scss */
 .toolbar {
   background-color: #2e2b2d;
@@ -8797,7 +8866,137 @@ button.close {
   height: initial;
   border-bottom: 1px solid #2e2b2d;
 }
+/* line 9, ../components/menu/_menu.scss */
+.toolbar .toolbar__left.left {
+  position: relative;
+}
+/* line 12, ../components/menu/_menu.scss */
+.toolbar .toolbar__left.left h1 {
+  font-size: 12pt;
+  display: inline-block;
+  padding-left: 50px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  margin-top: 12px;
+}
+/* line 20, ../components/menu/_menu.scss */
+.toolbar .toolbar__left.left .toolbar-button {
+  position: absolute;
+  top: calc(50% - 24px);
+}
+/* line 24, ../components/menu/_menu.scss */
+.toolbar .toolbar__left.left .toolbar-button .ons-icon {
+  color: black !important;
+  width: 1em;
+  font-size: 40px;
+  padding-left: 35px;
+}
+/* line 33, ../components/menu/_menu.scss */
+.toolbar .toolbar__right.right {
+  padding: 10px 22px;
+  box-sizing: content-box;
+  width: 40%;
+}
+/* line 37, ../components/menu/_menu.scss */
+.toolbar .toolbar__right.right ons-icon {
+  color: black;
+  font-size: 30px;
+  vertical-align: middle;
+  margin: 0px 8px;
+}
+/* line 44, ../components/menu/_menu.scss */
+.toolbar .toolbar__right.right .notification {
+  margin-left: -22px;
+  margin-top: 22px;
+  font-weight: bold;
+  font-size: 13px;
+  border: 2px solid black;
+  line-height: 14px;
+}
+
+/* line 56, ../components/menu/_menu.scss */
+.page.page-menu .page__background {
+  background-color: #e1e1e1;
+  opacity: 0.95;
+}
+/* line 61, ../components/menu/_menu.scss */
+.page.page-menu .page__content {
+  padding: 35px;
+}
+/* line 65, ../components/menu/_menu.scss */
+.page.page-menu .user-info {
+  margin-bottom: 15px;
+}
+/* line 68, ../components/menu/_menu.scss */
+.page.page-menu .user-info .user-image .fab {
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+}
+/* line 73, ../components/menu/_menu.scss */
+.page.page-menu .user-info .user-image .fab__icon {
+  background-size: cover;
+}
+/* line 78, ../components/menu/_menu.scss */
+.page.page-menu .user-info .user-image, .page.page-menu .user-info h1 {
+  display: inline-block;
+}
+/* line 81, ../components/menu/_menu.scss */
+.page.page-menu .user-info h1 {
+  font-family: "Lato-Light";
+  padding-left: 20px;
+  max-width: 49%;
+  vertical-align: middle;
+  font-size: 18pt;
+  font-weight: lighter;
+}
+/* line 91, ../components/menu/_menu.scss */
+.page.page-menu ons-list.list {
+  margin-left: -35px;
+  margin-right: -25px;
+  background-image: none;
+  background-color: transparent;
+}
+/* line 97, ../components/menu/_menu.scss */
+.page.page-menu ons-list.list ons-list-item {
+  border-bottom: 2px solid rgba(0, 64, 25, 0.1);
+  height: 46px;
+  padding-left: 35px;
+}
+/* line 103, ../components/menu/_menu.scss */
+.page.page-menu ons-list.list .left, .page.page-menu ons-list.list .center {
+  vertical-align: middle;
+  padding: 0;
+}
+/* line 108, ../components/menu/_menu.scss */
+.page.page-menu ons-list.list h2 {
+  margin: 0;
+  margin-left: 12px;
+  font-size: 13pt;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+/* line 115, ../components/menu/_menu.scss */
+.page.page-menu ons-list.list .icon {
+  font-size: 18pt;
+}
 
 /*
 <!-- endinjector -->
 */
+/* line 18, ../sass/index.scss */
+.page[status-bar-fill] > .page__content {
+  top: 0px;
+  padding-top: 69px;
+}
+
+/* line 23, ../sass/index.scss */
+.toolbar + .page__background + .page__content {
+  margin-top: -1px;
+  top: 69px !important;
+}
+
+/* line 29, ../sass/index.scss */
+.page .page__background {
+  background-color: #bfbfbf;
+}
