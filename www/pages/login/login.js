@@ -54,7 +54,6 @@ function LoginController($scope, $rootScope, $localStorage, loginService, $timeo
             console.log(returned);
             if (returned.erro == undefined) {
                 //_self.$rootScope.pageNavigator.resetToPage('pages/home/home.html');
-                _self.$rootScope.pageNavigator.resetToPage('pages/ads/ads.html');
                 _self.$localStorage.userInfo = returned;
                 try {
                     var userId = parseInt(returned.id, 10);
@@ -75,7 +74,7 @@ function LoginController($scope, $rootScope, $localStorage, loginService, $timeo
     };
 
     $scope.signUp = function() {
-
+        $rootScope.gotoPage("cadastro")
     }
 
     $scope.forgotPassword = function() {

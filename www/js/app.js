@@ -38,13 +38,21 @@ var uzzyeApp = angular.module('uzzyeApp', ['onsen', 'ngToast', 'ngStorage', 'ui.
 function onDeviceReady() {
     console.log("Ready please");
     window.setTimeout(function () {
+        //Controllers
         uzzyeApp.controller('appController', AppController);
         uzzyeApp.controller('menuController', MenuController);
         uzzyeApp.controller('loginController', LoginController);
 
+        //Services
         uzzyeApp.service("loginService", LoginService);
 
+        //Directives
         uzzyeApp.directive('commonToolbar', CommonToolbar);
+        uzzyeApp.directive('fileInput', FileInput);
+
+        //Filters
+
+        //=======
         ons.ready(function () {
             ons.disableAutoStyling();
             ons.platform.select('ios');

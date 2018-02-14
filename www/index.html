@@ -27,7 +27,10 @@
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline';
+                     style-src 'self' 'unsafe-inline'; 
+                     img-src data: gap: *;
+                     media-src *" />
     <!--
         <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src * data: blob: 'self' localhost:3000 uzzye.com/conexoes/ohtel/* ohtelcondominios.com.br/*; frame-src gap:" />
     -->
@@ -77,6 +80,7 @@
     <script src="bower_components/OnsenUI/js/angular-onsenui.js"></script>
     <!-- injector:js -->
     <script src="pages/login/login.js"></script>
+    <script src="components/file-input/file-input.js"></script>
     <script src="components/menu/menu.js"></script>
     <script src="components/toolbar/toolbar.js"></script>
     <!-- endinjector -->

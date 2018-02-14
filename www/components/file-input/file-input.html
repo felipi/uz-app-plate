@@ -1,0 +1,9 @@
+<div class="item">
+    <h2>Imagem</h2>
+    <label class="anexo" for="file-input-{{$id}}">
+        <span ng-if="attachment">{{attachment.name}}</span>
+        <ons-icon icon="ion-android-attach"> </ons-icon>
+    </label>
+    <img class="preview" ng-src="{{preview}}" />
+    <input type="file" style="display:none;" change="changePreview(attachment)" ng-model="attachment" name="anexo" id="file-input-{{$id}}" > </input>
+</div>
