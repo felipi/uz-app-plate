@@ -1,45 +1,56 @@
-function FileInput($timeout) {
-    return {
-        templateUrl: "components/file-input/file-input.html",
-        scope: {
-            preview: "="
-        },
-        link: function(scope, element, attrs) {
-            scope.attachment = null;
+(function () {
+    FileInput.$inject = ["$timeout"];
 
-            /*
-            if(scope.preview)
-                scope.preview = "data:image/jpeg;base64," + $scope.customerInfo.imagem;
-            */
-            var _scope = scope;
+    function FileInput($timeout) {
+        return {
+            templateUrl: "components/file-input/file-input.html",
+            restrict: "E",
+            scope: {
+                preview: "="
+            },
+            link: function(scope, element, attrs) {
+                scope.attachment = null;
 
-            element.find("input[type='file']")
-            .on("change", function() {
-                var input = this;
-                _scope.changePreview(input.files[0]); 
-            });
+                /*
+                if(scope.preview)
+                    scope.preview = "data:image/jpeg;base64," + $scope.customerInfo.imagem;
+                */
+                var _scope = scope;
 
-            scope.changePreview = function(attachment) { 
-                console.log("Preview");
-                console.log(attachment);
-                if(attachment) {
-                    if(attachment.size / 1000 / 1000 > 4) {
-                        ngToast.danger("O arquivo anexado deve ter no máximo 4MB!");
-                        return;
+                element.find("input[type='file']")
+                .on("change", function() {
+                    var input = this;
+                    _scope.changePreview(input.files[0]); 
+                });
+
+                scope.changePreview = function(attachment) { 
+                    console.log("Preview");
+                    console.log(attachment);
+                    if(attachment) {
+                        if(attachment.size / 1000 / 1000 > 4) {
+                            ngToast.danger("O arquivo anexado deve ter no máximo 4MB!");
+                            return;
+                        }
+
+                        var file = attachment;
+                        var reader = new FileReader();
+                        reader.onloadend = function(obj) {
+                            $timeout( function() {
+                                        console.log(obj);
+                                        var base64 = obj.target.result;
+                                        _scope.preview = base64;
+                            },0);
+                        }
+                        reader.readAsDataURL(file);
                     }
-
-                    var file = attachment;
-                    var reader = new FileReader();
-                    reader.onloadend = function(obj) {
-                        $timeout( function() {
-                                    console.log(obj);
-                                    var base64 = obj.target.result;
-                                    _scope.preview = base64;
-                        },0);
-                    }
-                    reader.readAsDataURL(file);
                 }
             }
         }
     }
-}
+
+    try {
+    angular.module("uzzye-utils").directive("uzFileInput", FileInput);
+    } catch(e) {
+    angular.module("uzzye-utils", []).directive("uzFileInput", FileInput);
+    }
+}());

@@ -19,7 +19,7 @@ function AppController($scope, $rootScope, $timeout, $localStorage) {
     });
 }
 
-var uzzyeApp = angular.module('uzzyeApp', ['onsen', 'ngToast', 'ngStorage', 'ui.bootstrap'])
+var uzzyeApp = angular.module('uzzyeApp', ['onsen', 'ngToast', 'ngStorage', 'ui.bootstrap', 'uzzye-utils'])
     .config(["ngToastProvider", function (ngToast) {
         ngToast.configure({
             dismissOnTimeout: false,
@@ -47,8 +47,6 @@ function onDeviceReady() {
         uzzyeApp.service("loginService", LoginService);
 
         //Directives
-        uzzyeApp.directive('commonToolbar', CommonToolbar);
-        uzzyeApp.directive('fileInput', FileInput);
 
         //Filters
 

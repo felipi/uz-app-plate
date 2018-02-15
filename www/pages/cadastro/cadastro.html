@@ -1,9 +1,14 @@
 <ons-page class="page page-cadastro" ng-controller="loginController">
-    <common-toolbar titulo="Cadastro" hide-menu="true"></common-toolbar>
+    <uz-common-toolbar titulo="Cadastro" hide-menu="true"></uz-common-toolbar>
   <h1> Cadastro </h1>  
 
-    <form name="userForm">
-       <file-input preview="userPhoto"></file-input>
-       <file-input preview="otherPhoto"></file-input>
+    <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+       <uz-file-input preview="userPhoto"></uz-file-input>
+        <uz-form-field model="user.username" form="userForm" field="username" label="Usuário" type="text"> </uz-form-field>
+        <uz-form-field model="user.email" form="userForm" field="email" label="Email" type="text"> </uz-form-field>
+        <uz-form-field model="user.password" form="userForm" field="password" label="Senha" type="password"> </uz-form-field>
+        <uz-form-field model="user.passwordConfirm" form="userForm" field="passwordConfirm" label="Confirme a Senha" type="password"> </uz-form-field>
+        
+        <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Seguinte -></button> 
     </form>
 </ons-page>
